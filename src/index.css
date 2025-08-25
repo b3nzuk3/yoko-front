@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fashion E-commerce Design System - Yoko Brand */
+
+@layer base {
+  :root {
+    /* Fashion Brand Color Palette */
+    /* Hex tokens for handoff */
+    --color-pink-primary-hex: #ff6ba6;
+    --color-pink-soft-hex: #ff9ccf;
+    --color-black-hex: #000000;
+    --color-cream-hex: #fff5e6;
+    --color-white-hex: #ffffff;
+    --color-muted-hex: #e7e7e7;
+    --primary-pink: 333 100% 70%; /* #FF6BA6 */
+    --soft-pink: 324 100% 80%; /* #FF9CCF */
+    --fashion-black: 0 0% 0%; /* #000000 */
+    --cream: 39 100% 95%; /* #FFF5E6 */
+    --pure-white: 0 0% 100%; /* #FFFFFF */
+    --subtle-gray: 0 0% 91%; /* #E7E7E7 */
+
+    /* Semantic Design Tokens */
+    --background: var(--pure-white);
+    --foreground: var(--fashion-black);
+
+    --card: var(--cream);
+    --card-foreground: var(--fashion-black);
+
+    --popover: var(--pure-white);
+    --popover-foreground: var(--fashion-black);
+
+    --primary: var(--primary-pink);
+    --primary-foreground: var(--pure-white);
+
+    --secondary: var(--cream);
+    --secondary-foreground: var(--fashion-black);
+
+    --muted: var(--subtle-gray);
+    --muted-foreground: 0 0% 45%;
+
+    --accent: var(--soft-pink);
+    --accent-foreground: var(--fashion-black);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--pure-white);
+
+    --border: var(--subtle-gray);
+    --input: var(--subtle-gray);
+    --ring: var(--primary-pink);
+
+    /* Radii */
+    --radius-s: 8px;
+    --radius-m: 12px;
+    --radius-xl: 24px;
+    --radius: var(--radius-m);
+
+    /* Fashion-specific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cream)), transparent);
+    --gradient-pink: linear-gradient(
+      135deg,
+      hsl(var(--primary-pink)),
+      hsl(var(--soft-pink))
+    );
+
+    /* Typography scale */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--fashion-black) / 0.1);
+    --shadow-card: 0 8px 30px -4px hsl(var(--fashion-black) / 0.15);
+
+    /* Motion */
+    --motion-duration-fast: 180ms;
+    --motion-duration-normal: 200ms;
+    --motion-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Back-compat */
+    --transition-smooth: all var(--motion-duration-normal) var(--motion-easing);
+    --transition-slow: all calc(var(--motion-duration-normal) + 100ms)
+      var(--motion-easing);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 56px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  small,
+  .caption {
+    font-size: 12px;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .pink-gradient {
+    background: var(--gradient-pink);
+  }
+
+  .fashion-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+
+  .slow-transition {
+    transition: var(--transition-slow);
+  }
+}
